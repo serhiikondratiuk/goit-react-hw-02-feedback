@@ -1,5 +1,6 @@
 import React from 'react';
 import Statistics from './components/Statistics';
+import FeedbackOptions from './components/FeedbackOptions';
 import './App.css';
 
 class App extends React.Component {
@@ -9,23 +10,43 @@ class App extends React.Component {
     bad: 0,
   };
 
-  countGoodFeedback = () => {
-    this.setState(prevState => ({
-      good: prevState.good + 1,
-    }));
+  onLeaveFeedback = e => {
+    if (e.target.innerText === 'good') {
+      this.setState(prevState => ({
+        good: prevState.good + 1,
+      }));
+    }
+
+    if (e.target.innerText === 'neutral') {
+      this.setState(prevState => ({
+        neutral: prevState.neutral + 1,
+      }));
+    }
+
+    if (e.target.innerText === 'bad') {
+      this.setState(prevState => ({
+        bad: prevState.bad + 1,
+      }));
+    }
   };
 
-  countNeutralFeedback = () => {
-    this.setState(prevState => ({
-      neutral: prevState.neutral + 1,
-    }));
-  };
+  // countGoodFeedback = () => {
+  //   this.setState(prevState => ({
+  //     good: prevState.good + 1,
+  //   }));
+  // };
 
-  countBadFeedback = () => {
-    this.setState(prevState => ({
-      bad: prevState.bad + 1,
-    }));
-  };
+  // countNeutralFeedback = () => {
+  //   this.setState(prevState => ({
+  //     neutral: prevState.neutral + 1,
+  //   }));
+  // };
+
+  // countBadFeedback = () => {
+  //   this.setState(prevState => ({
+  //     bad: prevState.bad + 1,
+  //   }));
+  // };
 
   countTotalFeedback = () => {
     const { bad, neutral, good } = this.state;
@@ -43,11 +64,12 @@ class App extends React.Component {
     const { good, neutral, bad } = this.state;
     return (
       <>
-        <h1>Please leave feedback</h1>
-        <button onClick={this.countGoodFeedback}>Good</button>
-        <button onClick={this.countNeutralFeedback}>Neutral</button>
-        <button onClick={this.countBadFeedback}>Bad</button>
-        <h2>Statistics</h2>
+        <h1>Caffe Expresso</h1>
+
+        <FeedbackOptions
+          options={Object.keys(this.state)}
+          onLeaveFeedback={this.onLeaveFeedback}
+        ></FeedbackOptions>
         <Statistics
           good={good}
           neutral={neutral}
