@@ -1,9 +1,11 @@
 .section {
+  font-family: 'Roboto';
   text-align: center;
-  padding: 0 15px;
+  padding: 5px 15px;
   margin: 0 auto;
   width: 400px;
+  background-color: rgba(177, 177, 177, 0.35);
 }
 .title {
-  font-style: italic;
+  margin-bottom: 10px;
 }

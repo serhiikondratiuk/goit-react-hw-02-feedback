@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Statistics from './components/Statistics';
 import FeedbackOptions from './components/FeedbackOptions';
 import Notification from './components/Notification';
 import Section from './components/Section';
-import './App.css';
+import s from './App.module.css';
 
-class App extends React.Component {
+class App extends Component {
   state = {
     good: 0,
     neutral: 0,
@@ -36,7 +36,7 @@ class App extends React.Component {
     return (
       <>
         <Section>
-          <h1>Caffe Expresso</h1>
+          <h1 className={s.title}>Caffe Expresso</h1>
         </Section>
         <Section title="Please leave feedback">
           <FeedbackOptions
@@ -54,7 +54,7 @@ class App extends React.Component {
               positivePercentage={this.countPositiveFeedbackPercentage()}
             />
           ) : (
-            <Notification message="There is no feedback"></Notification>
+            <Notification message="There is no feedback" />
           )}
         </Section>
       </>

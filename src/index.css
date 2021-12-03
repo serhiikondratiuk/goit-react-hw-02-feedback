@@ -1,7 +1,11 @@
+@import-normalize;
+
 body {
-  padding-top: 20px;
+  padding-top: 350px;
   margin: 0;
-  background-color: aliceblue;
+  background-image: url('./img/coffee.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
