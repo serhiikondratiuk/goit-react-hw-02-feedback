@@ -1,0 +1,9 @@
+.section {
+  text-align: center;
+  padding: 0 15px;
+  margin: 0 auto;
+  width: 400px;
+}
+.title {
+  font-style: italic;
+}
